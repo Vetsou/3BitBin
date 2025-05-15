@@ -18,6 +18,8 @@ TARGET = $(OBJ_DIR)/3BitBin
 
 -include $(DEPS)
 
+build: $(TARGET)
+
 run: $(TARGET)
 	$(TARGET) example/test.tbb
 

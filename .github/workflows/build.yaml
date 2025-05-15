@@ -21,7 +21,7 @@ jobs:
         run: mkdir -p out
 
       - name: Build project
-        run: make run
+        run: make build
 
       - name: Verify binary
         run: test -f out/3BitBin && echo "Build succeeded."
