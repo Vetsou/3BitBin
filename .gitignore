@@ -1,0 +1,8 @@
+# Build folder
+out
+
+# Test files
+example
+
+# Editor files
+.vscode
