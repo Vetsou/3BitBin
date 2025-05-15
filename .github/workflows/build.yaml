@@ -1,0 +1,27 @@
+name: Build project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Setup GCC
+        run: sudo apt update && sudo apt install -y build-essential
+
+      - name: Setup directories
+        run: mkdir -p out
+
+      - name: Build project
+        run: make run
+
+      - name: Verify binary
+        run: test -f out/3BitBin && echo "Build succeeded."
