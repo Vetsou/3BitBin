@@ -16,7 +16,7 @@ TARGET = $(OBJ_DIR)/3BitBin
 # Test files
 TEST_SRCS = $(wildcard $(TEST_DIR)/*.c)
 TEST_OBJS = $(patsubst $(TEST_DIR)/%.c, $(OBJ_DIR)/%.o, $(TEST_SRCS))
-TEST_TARGET = $(TEST_BIN)/3BitBin_test
+TEST_TARGET = $(OBJ_DIR)/3BitBin_test
 
 # Unity testing library
 UNITY_SRC = $(VENDOR_DIR)/unity.c
