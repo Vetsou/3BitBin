@@ -1,4 +1,4 @@
-name: Build project
+name: Build and test project
 
 on:
   push:
@@ -18,10 +18,16 @@ jobs:
         run: sudo apt update && sudo apt install -y build-essential
 
       - name: Setup directories
-        run: mkdir -p out
+        run: make setup
 
       - name: Build project
         run: make build
 
       - name: Verify binary
         run: test -f out/3BitBin && echo "Build succeeded."
+
+      - name: Build tests
+        run: make test
+
+      - name: Run tests
+        run: make run-test
